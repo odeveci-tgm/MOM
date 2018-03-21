@@ -1,5 +1,7 @@
 import java.io.FileOutputStream;
 import java.io.StringReader;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 import org.w3c.dom.Document;
@@ -28,12 +30,15 @@ public class XMLHandler {
 	}
 	
 	  public static String randomXML(int id) {
-		  String xml = "<windpark id=\""+id+"\"> <windrad id=\"001\"> <power>"+randomValue(10, 200)+"</power> <blindpower>382.54 kWh</blindpower>\n"+ 
-			  		"<windspeed>40.54 km/h</windspeed>\n"+ 
-			  		"<rotationspeed>0.42 m/s</rotationspeed>\n"+ 
-			  		"<temperature>25.8 C</temperature>\n" + 
-			  		"<bladeposition>25.8 deg</bladeposition>\n"+ 
-			  		"<transfertime>850 ms</transfertime> </windrad> </windpark>";
+		  Date date = new Date(System.currentTimeMillis());
+		  String xml = "<windpark id=\""+id+"\"> <windrad id=\"001\"> <power>"+randomValue(10, 200)+"</power> <blindpower>"+randomValue(10, 200)+"</blindpower>\n"+ 
+			  		"<windspeed>"+randomValue(10, 200)+"</windspeed>\n"+ 
+			  		"<rotationspeed>"+randomValue(10, 30)+"</rotationspeed>\n"+ 
+			  		"<temperature>"+randomValue(0, 30)+"</temperature>\n" + 
+			  		"<bladeposition>"+randomValue(10, 360)+"</bladeposition>\n"+ 
+			  		"<transfertime>"+date+"</transfertime> </windrad> </windpark>";
+		  
+		  
 		  return xml;
 	  }
 	  

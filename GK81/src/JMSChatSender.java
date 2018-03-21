@@ -2,6 +2,8 @@
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.DeliveryMode;
@@ -17,11 +19,12 @@ public class JMSChatSender {
   private static String url = ActiveMQConnection.DEFAULT_BROKER_URL;
   private static String subject = "QueuePark";
   public static int queueid = 1;
-  public int id;
+  public int id = 0;
   
   public JMSChatSender(int id) {
-	  this.id = id;
+	  this.id= id;
   }
+
   
   public void start() {
 	// Create the connection.
@@ -31,7 +34,7 @@ public class JMSChatSender {
 		  Destination destination = null;
 				
 		  try {
-		    	
+		    	System.out.println(id);
 				ConnectionFactory connectionFactory = new ActiveMQConnectionFactory( user, password, url );
 				connection = connectionFactory.createConnection();
 				connection.start();
@@ -48,8 +51,7 @@ public class JMSChatSender {
 				TextMessage message = session.createTextMessage(XMLHandler.randomXML(id));
 				producer.send(message);
 				System.out.println( message.getText() );
-				connection.stop();
-		      
+				//connection.stop();
 		  } catch (Exception e) {
 		  	
 		  	System.out.println("[MessageProducer] Caught: " + e);
@@ -64,5 +66,6 @@ public class JMSChatSender {
 		  }
 	      
 	  } // end main
+
   
 }

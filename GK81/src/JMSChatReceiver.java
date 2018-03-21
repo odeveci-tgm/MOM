@@ -17,8 +17,8 @@ public class JMSChatReceiver {
   private static String user = ActiveMQConnection.DEFAULT_USER;
   private static String password = ActiveMQConnection.DEFAULT_PASSWORD;
   private static String url = ActiveMQConnection.DEFAULT_BROKER_URL;
-  private static String subject = "VSDBChat";
-  public static int queuecount = 0;
+  private static String subject = "QueuePark";
+  public static int queuecount = 1;
   
   
 	
@@ -39,19 +39,29 @@ public class JMSChatReceiver {
 		
 			// Create the session
 			session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-			for (int i =0;i<=queuecount;i++) {
-				destination = session.createQueue( subject+String.valueOf(queuecount) );
-				// Create the consumer
-				consumer = session.createConsumer( destination );	
-				ParkThread pt = new ParkThread(consumer,queuecount);
-				pt.run();
-			}
 			
+			destination = session.createQueue( subject+String.valueOf(queuecount) );
+			// Create the consumer
+			consumer = session.createConsumer( destination );	
+			while(true) {
+			
+			// Recieve in Endless Loop
+			TextMessage message = (TextMessage) consumer.receive();
+			String output = message.getText();
+			XMLHandler.writeXML(output);
+			
+			if ( message != null ) {
+			      		System.out.println("Message received: " + output);
+			      		message.acknowledge();
+			 }			
+			}
 	  } catch (Exception e) {
 		  e.printStackTrace();
 	  }
   }
-  }
+}
+  
+  
 						
 			// Start receiving
   

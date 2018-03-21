@@ -1,0 +1,31 @@
+<windpark id="0"> <windrad id="001"> <power>27.6</power> <blindpower>382.54 kWh</blindpower>
+<windspeed>40.54 km/h</windspeed>
+<rotationspeed>0.42 m/s</rotationspeed>
+<temperature>25.8 C</temperature>
+<bladeposition>25.8 deg</bladeposition>
+<transfertime>850 ms</transfertime> </windrad> </windpark><windpark id="1"> <windrad id="001"> <power>166.29</power> <blindpower>382.54 kWh</blindpower>
+<windspeed>40.54 km/h</windspeed>
+<rotationspeed>0.42 m/s</rotationspeed>
+<temperature>25.8 C</temperature>
+<bladeposition>25.8 deg</bladeposition>
+<transfertime>850 ms</transfertime> </windrad> </windpark><windpark id="2"> <windrad id="001"> <power>194.71</power> <blindpower>382.54 kWh</blindpower>
+<windspeed>40.54 km/h</windspeed>
+<rotationspeed>0.42 m/s</rotationspeed>
+<temperature>25.8 C</temperature>
+<bladeposition>25.8 deg</bladeposition>
+<transfertime>850 ms</transfertime> </windrad> </windpark><windpark id="3"> <windrad id="001"> <power>136.68</power> <blindpower>382.54 kWh</blindpower>
+<windspeed>40.54 km/h</windspeed>
+<rotationspeed>0.42 m/s</rotationspeed>
+<temperature>25.8 C</temperature>
+<bladeposition>25.8 deg</bladeposition>
+<transfertime>850 ms</transfertime> </windrad> </windpark><windpark id="4"> <windrad id="001"> <power>146.64</power> <blindpower>382.54 kWh</blindpower>
+<windspeed>40.54 km/h</windspeed>
+<rotationspeed>0.42 m/s</rotationspeed>
+<temperature>25.8 C</temperature>
+<bladeposition>25.8 deg</bladeposition>
+<transfertime>850 ms</transfertime> </windrad> </windpark><windpark id="5"> <windrad id="001"> <power>167.52</power> <blindpower>382.54 kWh</blindpower>
+<windspeed>40.54 km/h</windspeed>
+<rotationspeed>0.42 m/s</rotationspeed>
+<temperature>25.8 C</temperature>
+<bladeposition>25.8 deg</bladeposition>
+<transfertime>850 ms</transfertime> </windrad> </windpark>
